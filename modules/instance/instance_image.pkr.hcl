@@ -12,7 +12,7 @@ source "amazon-ebs" "codepipeline" {
   ami_name      = var.ami_name
   instance_type = "t2.micro"
   region        = var.region
-  profile = "mihai-admin"
+  profile       = "mihai-admin"
   source_ami_filter {
     filters = {
       name                = "amzn2-ami-hvm-2.0.*-x86_64-gp2"
@@ -23,11 +23,16 @@ source "amazon-ebs" "codepipeline" {
     owners      = ["amazon"]
   }
   ssh_username = "ec2-user"
-   
+
 }
 
 build {
   sources = [
     "source.amazon-ebs.codepipeline"
   ]
+
+  provisioner "shell" {
+    script = "./code_deploy_init.sh"
+  }
+
 }
