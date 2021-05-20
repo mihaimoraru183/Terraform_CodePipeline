@@ -3,8 +3,6 @@ modules/instance/terraform.*
 
 
 
-
-
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*

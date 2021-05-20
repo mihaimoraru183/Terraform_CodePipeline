@@ -1,5 +1,5 @@
 provider aws {
-    profile = 
+    profile = var.profile
     region = var.region
 }
 

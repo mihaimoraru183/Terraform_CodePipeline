@@ -15,6 +15,7 @@ provider "aws" {
 module "ec2_instances" {
   source  = "./modules/instance"
   #version = "2.12.0"
+}
 
 //   name           = var.instance_name
 //   instance_count = 1
@@ -27,4 +28,9 @@ module "ec2_instances" {
 //     Terraform   = "true"
 //     Environment = "Test"
 //   }
+
+
+module "code_deploy" {
+  source  = "./modules/codepipeline/"
+  #version = "2.12.0"
 }
