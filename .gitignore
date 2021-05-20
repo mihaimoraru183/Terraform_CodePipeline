@@ -1,4 +1,3 @@
-modules/instance/.terraform.lock.hcl
 modules/instance/.terraform/
 modules/instance/terraform.tfstate
 modules/instance/terraform.tfstate.backup
