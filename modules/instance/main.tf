@@ -1,16 +1,16 @@
 provider aws {
-    profile = "mihai-admin"
+    profile = 
     region = var.region
 }
 
 resource "aws_instance" "codedeploy_instance" {
-  ami                   = "ami-0aaaf7510b24fd3d6"
+  ami                   = var.instace_ami
   instance_type         = var.instance_type
-  key_name              = "mihai-aws"                       
+  key_name              = var.instace_key                       
   iam_instance_profile  = aws_iam_instance_profile.instance_profile.name
 
   tags = {
-    Name = "CodeDeploy_Instance"
+    Name = var.instace_name
   }
 
 }
