@@ -1,9 +1,8 @@
-
-
+# Create roles and policies for CodeDeploy
 
 // Create a service role for CodeDeploy
 resource "aws_iam_role" "deploy_role" {
-  name = "codedeploy_role"
+  name = "codedeploy_rol"
   assume_role_policy = file("${path.module}/iam/role.json")
 }
 
@@ -29,8 +28,6 @@ resource "aws_iam_role_policy_attachment" "codedeploy_attach" {
 resource "aws_codedeploy_app" "demo_app" {
   name = "demo_app"
 }
-
-
 
 
 

@@ -25,9 +25,9 @@ variable "instace_ami" {
   default     = "ami-0aaaf7510b24fd3d6"
 }
 
-variable "instace_key" {
+variable "instance_key" {
   description = "AWS key"
-  default     = "mihai-aws"
+
 }
 
 
