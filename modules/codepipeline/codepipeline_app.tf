@@ -106,3 +106,6 @@ resource "aws_codepipeline" "codepipeline" {
 // data "aws_kms_alias" "s3kmskey" {
 //   name = "alias/myKmsKey"
 // }
+
+
+// "arn:aws:codestar-connections:eu-central-1:365300468986:connection/5d59c0e3-8928-4759-bc22-24cd3336bd04",

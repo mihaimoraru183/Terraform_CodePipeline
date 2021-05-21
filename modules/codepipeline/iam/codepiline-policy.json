@@ -11,8 +11,7 @@
                 "s3:PutObject"
             ],
             "Resource": [
-                "${aws_s3_bucket.codepipeline_bucket.arn}",
-                "${aws_s3_bucket.codepipeline_bucket.arn}/*"
+                "arn:aws:s3:::codepipeline-bucket-terraform/*"
             ]
         },
         {
@@ -20,7 +19,7 @@
             "Action": [
                 "codestar-connections:UseConnection"
             ],
-            "Resource": "${aws_codestarconnections_connection.codepipeline_conn.arn}"
+            "Resource": "aws_codestarconnections_connection.codepipeline_conn.arn"
         },
         {
             "Effect": "Allow",
