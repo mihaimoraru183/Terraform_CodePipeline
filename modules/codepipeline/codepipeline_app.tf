@@ -25,6 +25,9 @@ resource "aws_s3_bucket" "codepipeline_bucket" {
 
 
 
+
+
+
 resource "aws_codepipeline" "codepipeline" {
   name     = "pipeline_terraform"
   role_arn = aws_iam_role.codepipeline_role.arn
@@ -52,7 +55,7 @@ resource "aws_codepipeline" "codepipeline" {
 
       configuration = {
         ConnectionArn    = aws_codestarconnections_connection.codepipeline_conn.arn
-        FullRepositoryId = "git@github.com:mihaimoraru183/test_web_page.git"
+        FullRepositoryId = "mihaimoraru183/my_php"
         BranchName       = "master"
       }
     }
@@ -71,7 +74,7 @@ resource "aws_codepipeline" "codepipeline" {
       version          = "1"
 
       configuration = {
-        ProjectName = "test"
+        ProjectName = aws_codebuild_project.codebuild_app.name
       }
     }
   }
